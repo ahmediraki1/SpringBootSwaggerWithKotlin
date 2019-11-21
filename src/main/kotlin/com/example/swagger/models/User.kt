@@ -26,4 +26,6 @@ class User() {
 	var phoneNumber: String? = null
 	@ApiModelProperty(notes = "User status in the system", name = "active", required = false, value = "false")
 	var active: Boolean = false
+	@ApiModelProperty(notes = "User job", name = "job", required = false, value = "user job")
+	var job: String? = null
 }

@@ -13,23 +13,23 @@ import java.util.Random
 
 @SpringBootApplication
 open class SwaggerApplication : SpringBootServletInitializer() {
-	@Bean
-	open fun initActors(repository: UserRepository) = CommandLineRunner {
-		repository.deleteAll()
-		LongStream.range(1, 11)
-			.mapToObj { i ->
-				val c = User()
-				c.userName = "user $i"
-				c.emailAddress = c.userName + "@system.com"
-				c.phoneNumber = "0100" + i * 100 + "100" + i
-				c.active = Random().nextBoolean()
-				c
-			}
-			.map { v ->
-				repository.save(v)
-			}
-			.forEach({ println(it) })
-	}
+//	@Bean
+//	open fun initActors(repository: UserRepository) = CommandLineRunner {
+//		repository.deleteAll()
+//		LongStream.range(1, 11)
+//			.mapToObj { i ->
+//				val c = User()
+//				c.userName = "user $i"
+//				c.emailAddress = c.userName + "@system.com"
+//				c.phoneNumber = "0100" + i * 100 + "100" + i
+//				c.active = Random().nextBoolean()
+//				c
+//			}
+//			.map { v ->
+//				repository.save(v)
+//			}
+//			.forEach({ println(it) })
+//	}
 
 	companion object {
 		@JvmStatic
